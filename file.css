@@ -1,0 +1,108 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+h1, p{
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#main{
+    background: url("https://cdn.discordapp.com/attachments/797306334391042048/797311850261119006/triangle-5466395.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#contents{
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#contents h1{
+    font-family: 'TmonMonsori';
+    font-size: 60px;
+    margin-bottom: 16px;
+}
+
+#contents p{
+    font-family: 'TmonMonsori';
+    font-size: 23px;
+    margin-bottom: 16px;
+}
+
+#contents a{
+    top: 50%;
+    transform: translateY(20%);
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding:10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#contents a:hover{
+    background-color: lightblue;
+}
+
+#files{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#files h1{
+    font-family: 'TmonMonsori';
+    font-size: 30px;
+    margin-bottom: 2px;
+}
+
+#files a{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding:10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#files a:hover{
+    background-color: lightblue;
+}
+
+@media(max-width:769px){
+    #contents h1{
+        font-size: 40px;
+    }
+    
+    #contents p{
+        font-size: 14px;
+    }
+
+    #contents a{
+        font-size: 11px;
+    }
+}
